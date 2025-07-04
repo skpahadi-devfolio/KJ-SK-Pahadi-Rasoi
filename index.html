@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome | KJ&SK Pahadi Rasoi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Karma:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .landing-container {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      background: url('images/landing.jpg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1;
+    }
+
+    .content {
+      z-index: 3;
+      color: white;
+      max-width: 90%;
+    }
+
+    .content h1 {
+      font-size: 36px;
+      color: #ff4d4d;
+    }
+
+    .content h2 {
+      font-size: 50px;
+      margin: 10px 0;
+    }
+
+    .content p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .enter-btn {
+      text-decoration: none;
+      background-color: #ff4d4d;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    .enter-btn:hover {
+      background-color: #e60000;
+    }
+
+    .mandir-image {
+      position: relative;
+      z-index: 2;
+      width: 600px;
+      max-width: 90%;
+      height: auto;
+      animation: fadeInZoom 2s ease-in-out;
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+      margin-top: 20px;
+    }
+
+    .bell-wrapper {
+      position: relative;
+      z-index: 3;
+      margin-top: 20px;
+    }
+
+    #bellIcon {
+      font-size: 50px;
+      color: #ffcc00;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .shake {
+      animation: shake 0.5s ease;
+    }
+
+    @keyframes shake {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(-15deg); }
+      50% { transform: rotate(15deg); }
+      75% { transform: rotate(-10deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .golju-text {
+      position: relative;
+      z-index: 3;
+      font-family: 'Karma', serif;
+      font-size: 36px;
+      margin-top: 20px;
+      color: #ffcc00;
+      animation: glow 2s infinite alternate;
+      text-align: center;
+    }
+
+    @keyframes fadeInZoom {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff; }
+      to { text-shadow: 0 0 20px #ffcc00, 0 0 30px #ff9900; }
+    }
+
+    .music-toggle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    #musicBtn {
+      font-size: 28px;
+      background: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    #musicBtn:hover {
+      transform: scale(1.2);
+    }
+
+    .special-card {
+      position: relative;
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 16px 24px;
+      border-radius: 12px;
+      color: #fff;
+      font-family: 'Karma', serif;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      max-width: 280px;
+      z-index: 3;
+    }
+
+    .special-card h4 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #ffcc00;
+    }
+
+    .special-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .special-card p {
+      font-size: 18px;
+    }
+
+    /* ✅ Responsive Fix */
+    @media (max-width: 768px) {
+      .content h1 {
+        font-size: 28px;
+      }
+
+      .content h2 {
+        font-size: 36px;
+      }
+
+      .content p {
+        font-size: 16px;
+      }
+
+      .enter-btn {
+        padding: 10px 24px;
+        font-size: 16px;
+      }
+
+      .golju-text {
+        font-size: 28px;
+        margin-top: 16px;
+      }
+
+      #bellIcon {
+        font-size: 40px;
+      }
+
+      .special-card {
+        max-width: 220px;
+        padding: 12px 18px;
+      }
+
+      .music-toggle #musicBtn {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content h1 {
+        font-size: 20px;
+      }
+
+      .content h2 {
+        font-size: 24px;
+      }
+
+      .content p {
+        font-size: 14px;
+      }
+
+      .enter-btn {
+        padding: 8px 20px;
+        font-size: 14px;
+      }
+
+      .mandir-image {
+        width: 90%;
+        border-radius: 12px;
+      }
+
+      .golju-text {
+        font-size: 24px;
+      }
+
+      #bellIcon {
+        font-size: 32px;
+      }
+
+      .special-card {
+        max-width: 180px;
+        padding: 10px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="landing-container">
+    <div class="overlay"></div>
+
+    <div class="content">
+      <h1>Welcome to</h1>
+      <h2>KJ&SK Pahadi Rasoi</h2>
+      <p>Taste of Himalayas | पहाड़ों का स्वाद</p>
+      <a href="home.html" class="enter-btn">Enter Website</a>
+    </div>
+
+    <img src="images/dunagiri.jpg" alt="Mandir Image" class="mandir-image" />
+
+    <div class="bell-wrapper">
+      <i class="fas fa-bell" id="bellIcon"></i>
+    </div>
+
+    <h3 class="golju-text">जय गोल्ज्यू महाराज</h3>
+
+    <div class="special-card" id="specialCard">
+      <h4>🔥 <span id="dayName">Today</span>'s Special</h4>
+      <img id="specialImg" src="" alt="Today's Dish">
+      <p id="specialItem"></p>
+    </div>
+  </div>
+
+  <div class="music-toggle">
+    <button id="musicBtn">🔇</button>
+  </div>
+
+  <audio id="bgMusic" src="sounds/bg-music.mp3" loop autoplay muted></audio>
+  <audio id="bellSound" src="sounds/Bell.mp3" preload="auto"></audio>
+
+  <script>
+    const bellIcon = document.getElementById("bellIcon");
+    const bellSound = document.getElementById("bellSound");
+    bellIcon.addEventListener("click", () => {
+      bellSound.currentTime = 0;
+      bellSound.play();
+      bellIcon.classList.add("shake");
+      setTimeout(() => bellIcon.classList.remove("shake"), 500);
+    });
+
+    const bgMusic = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
+    document.addEventListener("click", () => {
+      bgMusic.muted = false;
+      bgMusic.play().catch(() => {});
+      musicBtn.textContent = "🔈";
+    }, { once: true });
+
+    musicBtn.addEventListener("click", () => {
+      bgMusic.muted = !bgMusic.muted;
+      musicBtn.textContent = bgMusic.muted ? "🔇" : "🔈";
+      if (!bgMusic.muted) bgMusic.play();
+    });
+
+    const specialsByDay = {
+      0: { name: "Pahadi Momos ₹100 🥟", img: "images/pahadi momos.jpeg" },
+      1: { name: "Mandua Roti ₹40 🫓", img: "images/mandu roti.jpeg" },
+      2: { name: "Bhatt Ki Churkani ₹90 🥣", img: "images/bhatt ki churkani.jpeg" },
+      3: { name: "Chole Samose ₹60 🍲", img: "images/chole samose.jpeg" },
+      4: { name: "Jhangore Kheer ₹60 🍚", img: "images/jhangore ki kheer.jpeg" },
+      5: { name: "Aloo ke Gutke ₹50 🥔", img: "images/aloo ke gutke.jpeg" },
+      6: { name: "Raiyta Pakodi ₹90 🫓", img: "images/raiyta pakodi.jpeg" }
+    };
+
+    const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const today = new Date().getDay();
+    document.getElementById("specialItem").textContent = specialsByDay[today].name;
+    document.getElementById("specialImg").src = specialsByDay[today].img;
+    document.getElementById("specialImg").alt = specialsByDay[today].name;
+    document.getElementById("dayName").textContent = dayNames[today];
+  </script>
+</body>
+</html>
